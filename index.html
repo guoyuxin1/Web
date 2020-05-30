@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>web作业</title>
+	<style>
+		*{
+			padding : 0;
+			margin : 0;
+		}
+		li{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		.clearfix::after{
+			content: "";
+			height: 0;
+			display: block;
+			clear: both;
+		}
+		#nav{
+			width:1200px;
+			height: 101px;
+			margin: 0 auto;
+		}
+		.left-one{
+			width: 180px;
+			height: 50px;
+			float: left;
+			margin-top: 30px;
+			margin-left: 8px;
+			
+		}
+		.left-two{
+			width: 300px;
+			height: 40px;
+			float: left;
+			margin-top: 30px;
+			margin-left: 20px;
+		}
+		
+		.left-two .one{
+			width: 60px;
+			height: 40px;
+			margin-left: 30px;
+			float: left;
+			text-align: center;
+			line-height: 40px;
+		}	
+		.left-two .one a{
+			font-size:18px;
+			font-family:Microsoft YaHei;
+			font-weight:400;
+			color:rgba(5,5,5,1);
+		}
+		.left-two .one:hover{
+			border-bottom: 2px #00a4ff solid ;
+		}
+		.right-one{
+			width: 410px;
+			height: 40px;
+			float: left;
+			margin-top: 30px;
+			margin-left: 160px;
+		}
+		.right-two{
+			width:60px;
+			height:12px;
+			font-size:14px;
+			font-family:Microsoft YaHei;
+			font-weight:400;
+			color:rgba(102,102,102,1);
+			float: left;
+			margin-top: 40px;
+			margin-left: 31px;
+		}
+		#banner{
+			background: url(img/轮播图.png)no-repeat top center;
+			height: 420px;
+		}
+		#banner .center {
+			width: 1200px;
+			height: 420px;
+			margin: 0 auto;
+		}
+		#banner .list{
+			width: 190px;
+			height: 420px;
+			background-color:#13014b;
+			
+		}
+		.list .one{
+			width: 100%;
+			height: 21px;
+			line-height: 21px;
+			color: #FFFFFF;
+			float: left;
+			margin-top: 20px;
+		}
+		.list .one .word-one{
+			float: left;
+			margin-top: 12px;
+			margin-left: 21px;
+		}
+		.list .one .word-two{
+			float: right;
+			margin-top: 12px;
+			margin-right: 21px;
+		}
+		.list .one:hover{
+			cursor: pointer;
+			color: #0393d9;
+		}
+		#body{
+			width: 100%;
+			height: 1520px;
+			background-color: #f3f5f7;
+			padding-top: 8px;
+		}
+		#body .nav{
+			width: 1200px;
+			height: 60px;
+			margin: 0 auto;
+			background-color: #FFFFFF;
+			box-shadow:0px 2px 3px 0px rgba(118,118,118,0.2);
+		}
+		#body .nav .one{
+			width: 130px;
+			height: 20px;
+			line-height: 20px;
+			text-align: center;
+			border-right: 2px #bfbfbf solid;
+			margin-top: 20px;
+			float: left;
+			font-size:16px;
+			font-family:Microsoft YaHei;
+			font-weight:bold;
+			color:#050505;
+		}
+		#body .nav .one:hover{
+			cursor: pointer;
+			color: #00A4FF;
+		}
+		#body .nav .two{
+			width:60px;
+			height:18px;
+			line-height: 18px;
+			margin-top: 20px;
+			float: right;
+			font-size:14px;
+			margin-right: 60px;
+			font-family:Microsoft YaHei;
+			font-weight:bold;
+			color:rgba(0,164,255,1);
+		}
+		#body .header{
+			width: 1200px;
+			height: 75px;
+			margin:  0  auto;
+		}
+		#body .header .one{
+			width: 150px;
+			height: 20px;
+			line-height: 20px;
+			font-size:20px;
+			font-family:Microsoft YaHei;
+			font-weight:400;
+			color:rgba(73,73,73,1);
+			float: left;
+			margin-top: 35px;
+			margin-left: 5px;
+		}
+		
+		#body .header .two{
+			width:48px;
+			height:13px;
+			font-size:12px;
+			font-family:Microsoft YaHei;
+			font-weight:400;
+			color:rgba(165,165,165,1);
+			float: right;
+			margin-right: 20px;
+			margin-top: 35px;
+		}
+		#main {
+			width: 1200px;
+			height: 580px;
+			margin: 0 auto;
+		}
+		#main .one{
+			width:228px;
+			height:270px;
+			float: left;
+			margin-bottom: 16px;
+			margin-left: 15px;
+			background-color: #FFFFFF;
+		}
+		#main .one:hover{
+			cursor: pointer;
+			box-shadow:0px 2px 5px 0px rgba(118,118,118,0.5);
+			
+		}
+		#main .one .top-img{
+			width: 228px;
+			height: 155px;
+			
+		}
+		#main .one .word-one{
+			width:185px;
+			height:34px;
+			font-size:14px;
+			font-family:Microsoft YaHei;
+			font-weight:400;
+			color:rgba(5,5,5,1);
+			line-height:20px;
+			float: left;
+			margin-top: 24px;
+			margin-left: 23px;
+		}
+		#main .one .word-two{
+			width:119px;
+			height:13px;
+			font-size:12px;
+			font-family:Microsoft YaHei;
+			font-weight:400;
+			color:#b8b8b8;
+			float: left;
+			margin-top: 17px ;
+			margin-left: 23px;
+		}
+		#body .header .one-two{
+			width:400px;
+			height:20px;
+			line-height: 20px;
+			float: left;
+			margin-top: 30px;
+			margin-left: 240px;
+		}
+		#body .header .one-two .a{
+			width: 100px;
+			height: 20px;
+			text-align: center;
+			font-size:16px;
+			font-family:Microsoft YaHei;
+			float: left;
+			font-weight:400;
+			color: #868686;
+		}
+		#body .header .one-two .a:hover{
+			cursor: pointer;
+			color:rgba(0,164,255,1);
+		}
+		#content{
+			width: 1200px;
+			height: 288px;
+			margin: 0 auto;
+		}
+		#content .one{
+			width:228px;
+			height:270px;
+			float: left;
+			margin-bottom: 16px;
+			margin-left: 15px;
+			background-color: #FFFFFF;
+		}
+		#content .one:hover{
+			cursor: pointer;
+			box-shadow:0px 2px 5px 0px rgba(118,118,118,0.5);
+			
+		}
+		#content .one .top-img{
+			width: 228px;
+			height: 155px;
+			
+		}
+		#content .one .word-one{
+			width:185px;
+			height:34px;
+			font-size:14px;
+			font-family:Microsoft YaHei;
+			font-weight:400;
+			color:rgba(5,5,5,1);
+			line-height:20px;
+			float: left;
+			margin-top: 24px;
+			margin-left: 23px;
+		}
+		#content .one .word-two{
+			width:119px;
+			height:13px;
+			font-size:12px;
+			font-family:Microsoft YaHei;
+			font-weight:400;
+			color:#b8b8b8;
+			float: left;
+			margin-top: 17px ;
+			margin-left: 23px;
+		}
+		#bottom{
+			width: 1200px;
+			height: 288px;
+			margin: 0 auto;
+		}
+		#bottom .img{
+			width: 470px;
+			height: 320px;
+			float: left;
+		}
+		#bottom .one{
+			float: left;
+			width: 228px;
+			height: 320px;
+			margin-left: 15px;
+			position: relative;
+		}
+		#bottom .abo{
+			width: 228px;
+			position: absolute;
+			height:122px;
+			background:rgba(0,0,0,0.5);
+			top:198px;
+		}
+		#bottom .abo .word-one{
+			width:108px;
+			height:18px;
+			font-size:18px;
+			font-family:Microsoft YaHei;
+			font-weight:bold;
+			color:rgba(255,255,255,1);
+			line-height:20px;
+			float: left;
+			margin-top:21px ;
+			margin-left: 29px;
+		}
+		
+		#bottom .abo .word-two{
+			width:175px;
+			height:53px;
+			font-size:12px;
+			font-family:Microsoft YaHei;
+			font-weight:400;
+			color:rgba(255,255,255,1);
+			line-height:20px;
+			float: left;
+			margin-top: 12px;
+			margin-left: 25px;
+		}
+		#word{
+			display: inline;
+			font-size:12px;
+			font-family:Microsoft YaHei;
+			font-weight:400;
+			color:rgba(255,255,255,1);
+		}
+		#footer{
+			width: 1200px;
+			height: 300px;
+			padding-top: 120px;
+			margin: 0 auto;
+		}
+		#foot{
+			width: 100%;
+			height: 160px;
+		}
+		#foot .one{
+			width: 400;
+			height: 160px;
+			float: left;
+		}
+		#foot .one .top-img{
+			width: 143px;
+			height: 36px;
+			
+		}
+		#foot .one .word-one{
+			width:400px;
+			height:18px;
+			font-size:12px;
+			font-family:SimSun;
+			font-weight:400;
+			color:rgba(102,102,102,1);
+			line-height:18px;
+			margin-top: 32px;
+			margin-bottom: 32px;
+			
+		}
+		#foot .one .word-two{
+			width: 120px;
+			height: 36px;
+			font-size:16px;
+			font-family:Microsoft YaHei;
+			font-weight:400;
+			text-align: center;
+			color:rgba(0,164,255,1);
+			line-height:36px;
+			border: 2px solid #00A4FF;
+		}
+		#foot .one .word-two:hover{
+			cursor: pointer;
+		}
+		#foot .two{
+			float: left;
+			width: 98px;
+			height: 160px;
+			margin-left: 168px;
+		}
+		#foot .two .word-one{
+			width:85px;
+			height:30px;
+			font-size:16px;
+			font-family:Microsoft YaHei;
+			font-weight:400;
+			color:rgba(51,51,51,1);
+			line-height:30px;
+			text-align: left;
+		}
+		#foot .two .word-two{
+			width: 100%;
+			height:18px;
+			font-size:12px;
+			font-family:SimSun;
+			font-weight:400;
+			color:rgba(51,51,51,1);
+			line-height:18px;
+		}
+	</style>
+</head>
+<body>
+	<div id = "nav" class=" clearfix">
+		<div class = "left-one">
+			<img height="50px"  width="180px" src="img/蓝字.png" >
+		</div>
+		<div class = "left-two   clearfix">
+			<div class = "one">
+				<a href="#">首页</a>
+			</div>
+			<div class = "one">
+				<a href="#">课程</a>
+			</div>
+			<div class = "one" style="width: 90px;">
+				<a href="#">职业规划</a>
+			</div>
+		</div>
+		<div class = "right-one">
+			<img width="410px" height="40px" src="img/搜索框.png" >
+		</div>
+		<div class = "right-two">
+			个人中心
+		</div>
+	</div>
+	<div id = "banner">
+		<div class = "center">
+			<div class = "list clearfix">
+				<div class = "one">
+					<div class = "word-one">
+						前端开发
+					</div>
+					<div class = "word-two">
+						>
+					</div>
+				</div>
+				<div class = "one">
+					<div class = "word-one">
+						后端开发
+					</div>
+					<div class = "word-two">
+						>
+					</div>
+				</div>
+				<div class = "one">
+					<div class = "word-one">
+						移动开发
+					</div>
+					<div class = "word-two">
+						>
+					</div>
+				</div>
+				
+				<div class = "one">
+					<div class = "word-one">
+						人工智能
+					</div>
+					<div class = "word-two">
+						>
+					</div>
+				</div>
+				<div class = "one">
+					<div class = "word-one">
+						商业预测
+					</div>
+					<div class = "word-two">
+						>
+					</div>
+				</div>
+				<div class = "one">
+					<div class = "word-one">
+						云计算&大数据
+					</div>
+					<div class = "word-two">
+						>
+					</div>
+				</div>
+				<div class = "one">
+					<div class = "word-one">
+						运维&从测试
+					</div>
+					<div class = "word-two">
+						>
+					</div>
+				</div>
+				<div class = "one">
+					<div class = "word-one">
+						UI设计
+					</div>
+					<div class = "word-two">
+						>
+					</div>
+				</div>
+				<div class = "one">
+					<div class = "word-one">
+						产品
+					</div>
+					<div class = "word-two">
+						>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id = "body">
+		<div class = "nav clearfix">
+			<div class = "one" style="color:rgba(0,164,255,1);">
+				精品推荐
+			</div>
+			<div class = "one">
+				JQuery
+			</div>
+			<div class = "one">
+				Spark
+			</div>
+			<div class = "one">
+				Mysql
+			</div>
+			<div class = "one">
+				Javaweb
+			</div>
+			<div class = "one">
+				Mysql
+			</div>
+			<div class = "one" style="border: none;">
+				Javaweb
+			</div>
+			<div class = "two">
+				修改兴趣
+			</div>
+		</div>
+		<div class = "header clearfix">
+			<div class = "one">
+				精品推荐
+			</div>
+			<div class = "two">
+				查看全部
+			</div>
+		</div>
+		<div id = "main" class = "clearfix">
+			<div class = "one"  style="margin-left: 0;">
+				<div class = "top-img">
+					<img width="228px"  height="155px" src="img/1-1.png" >
+				</div>
+				<div class = "word-one">
+                     Think PHP 5.0 博客系统实战项目演练     
+				</div>
+				<div class = "word-two">
+                   <div style = "color:rgba(255,124,45,1); display: inline;">高级</div>    •  1125人在学习
+				</div>
+			</div>
+			<div class = "one">
+				<div class = "top-img">
+					<img width="228px"  height="155px" src="img/1-2.png" >
+				</div>
+				<div class = "word-one">
+			         Android 网络图片加载框架详解    
+				</div>
+				<div class = "word-two">
+			       <div style = "color:rgba(255,124,45,1); display: inline;">高级</div>    •  1125人在学习
+				</div>
+			</div>
+			<div class = "one">
+				<div class = "top-img">
+					<img width="228px"  height="155px" src="img/1-3.png" >
+				</div>
+				<div class = "word-one">
+			         Angular 2 最新框架+主流技术+项目实战       
+				</div>
+				<div class = "word-two">
+			       <div style = "color:rgba(255,124,45,1); display: inline;">高级</div>    •  1125人在学习
+				</div>
+			</div>
+			<div class = "one">
+				<div class = "top-img">
+					<img width="228px"  height="155px" src="img/1-4.png" >
+				</div>
+				<div class = "word-one">
+			         Android Hybrid APP开发实战 H5+原生！    
+				</div>
+				<div class = "word-two">
+			       <div style = "color:rgba(255,124,45,1); display: inline;">高级</div>    •  1125人在学习
+				</div>
+			</div>
+			<div class = "one">
+				<div class = "top-img">
+					<img width="228px"  height="155px" src="img/1-5.png" >
+				</div>
+				<div class = "word-one">
+			         Android Hybrid APP开发实战 H5+原生！    
+				</div>
+				<div class = "word-two">
+			       <div style = "color:rgba(255,124,45,1); display: inline;">高级</div>    •  1125人在学习
+				</div>
+			</div>
+			<div class = "one" style="margin-left: 0; ">
+				<div class = "top-img">
+					<img width="228px"  height="155px" src="img/1-1.png" >
+				</div>
+				<div class = "word-one">
+			         Think PHP 5.0 博客系统实战项目演练     
+				</div>
+				<div class = "word-two">
+			       <div style = "color:rgba(255,124,45,1); display: inline;">高级</div>    •  1125人在学习
+				</div>
+			</div>
+			<div class = "one">
+				<div class = "top-img">
+					<img width="228px"  height="155px" src="img/1-2.png" >
+				</div>
+				<div class = "word-one">
+			         Android 网络图片加载框架详解      
+				</div>
+				<div class = "word-two">
+			       <div style = "color:rgba(255,124,45,1); display: inline;">高级</div>    •  1125人在学习
+				</div>
+			</div>
+			<div class = "one">
+				<div class = "top-img">
+					<img width="228px"  height="155px" src="img/1-3.png" >
+				</div>
+				<div class = "word-one">
+			         Angular 2 最新框架+主流技术+项目实战       
+				</div>
+				<div class = "word-two">
+			       <div style = "color:rgba(255,124,45,1); display: inline;">高级</div>    •  1125人在学习
+				</div>
+			</div>
+			<div class = "one">
+				<div class = "top-img">
+					<img width="228px"  height="155px" src="img/1-4.png" >
+				</div>
+				<div class = "word-one">
+			         Android Hybrid APP开发实战 H5+原生！     
+				</div>
+				<div class = "word-two">
+			       <div style = "color:rgba(255,124,45,1); display: inline;">高级</div>    •  1125人在学习
+				</div>
+			</div>
+			<div class = "one">
+				<div class = "top-img">
+					<img width="228px"  height="155px" src="img/1-5.png" >
+				</div>
+				<div class = "word-one">
+			         Android Hybrid APP开发实战 H5+原生！      
+				</div>
+				<div class = "word-two">
+			       <div style = "color:rgba(255,124,45,1); display: inline;">高级</div>    •  1125人在学习
+				</div>
+			</div>
+		</div>
+		<div class = "header clearfix">
+			<div class = "one">
+				前端开发工程师
+			</div>
+			<div class = "one-two">
+				<div class = "a">
+					热门
+				</div>
+				<div class = "a">
+					初级
+				</div>
+				<div class = "a">
+					中级
+				</div>
+				<div class = "a">
+					高级
+				</div>
+			</div>
+			<div class = "two">
+				查看全部
+			</div>
+		</div>
+		<div id = "content" class="clearfix">
+			<div class = "one"  style = " margin-left: 0;">
+				<div class = "top-img">
+					<img  src="img/2-1.png" >
+				</div>
+				<div class = "word-one">
+					微软人工智能-数据分析平台
+				</div>
+				<div class = "word-two">
+					<div style = "color:rgba(255,124,45,1); display: inline;">高级</div>    •  1125人在学习
+				</div>
+			</div>
+			<div class = "one">
+				<div  class = "top-img">
+					<img width = "228px" height = "155px" src="img/2-2.png" >
+				</div>
+				<div class = "word-one">
+					Unity Profiler入门     
+				</div>
+				<div class = "word-two">
+					<div style = "color:rgba(255,124,45,1); display: inline;">高级</div>    •  1125人在学习
+				</div>
+			</div>
+			<div class = "one">
+				<div class = "top-img">
+					<img width = "228px" height = "155px" src="img/2-3.png" >
+				</div>
+				<div class = "word-one">
+					Cocos2d-x 引擎源码中的纹理优化     
+				</div>
+				<div class = "word-two">
+					<div style = "color:rgba(255,124,45,1); display: inline;">高级</div>    •  1125人在学习
+				</div>
+			</div>
+			<div class = "one">
+				<div class = "top-img">
+					<img width = "228px" height = "155px" src="img/2-4.png" >
+				</div>
+				<div class = "word-one">
+					Kami2首页界面切换效果
+				</div>
+				<div class = "word-two">
+					<div style = "color:rgba(255,124,45,1); display: inline;">高级</div>    •  1125人在学习
+				</div>
+			</div>
+			<div class = "one">
+				<div class = "top-img">
+					<img width = "228px" height = "155px" src="img/2-5.png" >
+				</div>
+				<div class = "word-one">
+					Android Hybrid APP开发实战 H5+原生！     
+				</div>
+				<div class = "word-two">
+					<div style = "color:rgba(255,124,45,1); display: inline;">高级</div>    •  1125人在学习
+				</div>
+			</div>
+			
+			
+		</div>
+		<div class = "header">
+			<div class="one">
+				牛人推荐
+			</div>
+		</div>
+		<div id = "bottom">
+			<div class="img">
+				<img width = "470px"  height = "320px" src="img/毕业季.png" >
+			</div>
+			<div class = "one">
+				<img width="228px" height="320px" src="img/men1.png" >
+				<div class = "abo clearfix">
+				 	<div class = "word-one">
+						闻老师 <div id = "word">大数据</div>
+					</div>
+					<div class = "word-two">
+						高级互联网软件工程师，曾担任某物流公司CRM开发团队TL。多年JAVAEE、大数据领域研发……
+					</div>
+				</div>
+			</div>
+			<div class = "one">
+				<img width="228px" height="320px" src="img/men2.png" >
+				<div class = "abo clearfix">
+				 	<div class = "word-one">
+						汪老师 <div id = "word">前端</div>
+					</div>
+					<div class = "word-two">
+						高级软件架构师，全栈开发，多年大型项目管理经验。对Web Components、Node.js……
+					</div>
+				</div>
+			</div>
+			<div class = "one">
+				<img width="228px" height="320px" src="img/men3.png" >
+				<div class = "abo clearfix">
+				 	<div class = "word-one">
+						江老师 <div id = "word">前端</div>
+					</div>
+					<div class = "word-two">
+						多年软件开发经验和教学经验，精通html，css，js,asp.net等编程语言和数据库系统……
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id = "footer">
+		<div id = "foot" class = "clearfix">
+			<div class = "one">
+				<div class = "top-img">
+					<img width="143px" height="36px" src="img/蓝字.png" >
+				</div>
+				<div class = "word-one">
+					致力于普及中国最好的教育,与中国一流大学和机构合作提供在线课程。
+				</div>
+				<div class = "word-two">
+					下载APP
+				</div>
+			</div>
+			<div class = "two">
+				<div class = "word-one">
+					关于雪梨网
+				</div>
+				<div class = "word-two">关于</div>
+				<div class = "word-two">管理团队</div>
+				<div class = "word-two">工作机会</div>
+				<div class = "word-two">客户服务</div>
+				<div class = "word-two">帮助</div>
+			</div>
+			<div class = "two">
+				<div class = "word-one">
+					新手指南
+				</div>
+				<div class = "word-two">如何注册</div>
+				<div class = "word-two">如何选课</div>
+				<div class = "word-two">如何拿到毕业证</div>
+				<div class = "word-two">学分是什么</div>
+				<div class = "word-two">考试未通过怎么办</div>
+			</div>
+			<div class = "two">
+				<div class = "word-one">
+					合作伙伴
+				</div>
+				<div class = "word-two">合作机构</div>
+				<div class = "word-two">合作导师</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
